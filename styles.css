@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #9EDDFF;
+    margin: 0px;
+}
+
+.card {
+    margin-top: 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: #f7f7f7;
+}
+
+.card-title {
+    text-align: center;
+    color: #007BFF;
+}
+
+.btn-primary {
+    background-color: #007BFF;
+    border: none;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    margin: 0px;
+}
+.content {
+    background-color: #9EDDFF;
+}
+
+.header {
+    background-color: #6499E9;
+    margin-right: 0px;
+}
+
+.content {
+    flex: 1;
+}
+
+.footer {
+    background-color: #BEFFF7;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Login Page</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container header text-center">
+        <div class="d-inline-block text-center">
+            <img src="navbar-logo.jpg" width="50" height="50" class="d-inline-block align-top mr-2" alt="Company Logo">
+            <h2 class="d-inline-block mb-0">Manatec Support Page</h2>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <form onsubmit="return validateLoginForm();">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                                <div id="username-error" class="text-danger"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                                <div id="password-error" class="text-danger"></div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                                <p class="mt-2"><a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="company-logo.jpg">
+
+    <footer class="footer text-center">
+        <p>&copy; 2023 Manatec Electronics. All rights reserved. | Email: <a href="mailto:support@manatec.in">support@manatec.in</a> | Phone: +91 (123) 456-7890</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function validateLoginForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var usernameError = document.getElementById("username-error");
+            var passwordError = document.getElementById("password-error");
+
+            usernameError.textContent = "";
+            passwordError.textContent = "";
+
+            if (username === "") {
+                usernameError.textContent = "Username is required.";
+                return false;
+            }
+
+            if (password === "") {
+                passwordError.textContent = "Password is required.";
+                return false;
+            }
+
+            // Validation successful, redirect to home.html
+            window.location.href = "home.html";
+            return false;
+        }
+    </script>
+
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="return validateForgotPasswordForm();">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            <div id="email-error" class="text-danger"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username-forgot">Username</label>
+                            <input type="text" class "form-control" id="username-forgot" placeholder="Enter your username">
+                            <div id="username-forgot-error" class="text-danger"></div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForgotPasswordForm() {
+            var email = document.getElementById("email").value;
+            var username = document.getElementById("username-forgot").value;
+
+            var emailError = document.getElementById("email-error");
+            var usernameError = document.getElementById("username-forgot-error");
+
+            emailError.textContent = "";
+            usernameError.textContent = "";
+
+            if (email === "") {
+                emailError.textContent = "Email is required.";
+                return false;
+            }
+
+            if (username === "") {
+                usernameError.textContent = "Username is required.";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
